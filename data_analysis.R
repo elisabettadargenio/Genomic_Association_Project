@@ -120,7 +120,7 @@ table(df_dicot$variation) #120 Smoker 191 Non smoker
 df_dicot<-merge(x=df_dicot,y=gender,by="user_id",all.x=TRUE)
 df_dicot$sex<-droplevels(df_dicot$sex) 
 
-#rimuovo le osservazioni 159 e 260 perchè ho visto dalle analisi dei dataset spezzati che sono problematiche
+#rimuovo le osservazioni 159 e 260 perchÃ¨ ho visto dalle analisi dei dataset spezzati che sono problematiche
 df_dicot<-df_dicot[-c(159,260),]
 
 ############################################################################################################################################################
@@ -133,8 +133,8 @@ df_dicot_1<-merge(x=df_dicot[,c(1,8959837)],y=df_dicot_1,by="user_id",all.x=TRUE
 df_dicot_1<-merge(x=df_dicot[,c(1,8959838)],y=df_dicot_1,by="user_id",all.x=TRUE)
 #################################### PULIZIA DATASET #########################################
 
-#Gli SNP con NA significa che quello snp non è stato sequenziato per quel genoma, se invece c'è il "--" lo snp è stato sequenziato ma
-#non è presente il valore. 
+#Gli SNP con NA significa che quello snp non Ã¨ stato sequenziato per quel genoma, se invece c'Ã¨ il "--" lo snp Ã¨ stato sequenziato ma
+#non Ã¨ presente il valore. 
 
 #Ricodifico "--" come NA
 
@@ -147,7 +147,7 @@ levels(df_dicot_1[,99999])
 df_dicot_1[c(159,260),c(1,2,4)]
 which(df_dicot_1[,4]=='CT')
 droplevels(df_dicot_1[,4])
-#rimuovo la riga 159 e 260 (user 45 e 77) perchè codificate male (CT e TC sullo snp rs3094315 + altri problemi analoghi) 
+#rimuovo la riga 159 e 260 (user 45 e 77) perchÃ¨ codificate male (CT e TC sullo snp rs3094315 + altri problemi analoghi) 
 df_dicot_1<-df_dicot_1[-c(159,260),]
 #Rimuovo le colonne con +80% di NA
 
@@ -161,7 +161,7 @@ df_dicot_1<-df_dicot_1[-c(159,260),]
 
 
 #dat[,which(colMeans(!is.na(dat)) > 0.2)]
-#rimuovo le colonne che hanno più dell'80% di NA
+#rimuovo le colonne che hanno piÃ¹ dell'80% di NA
 df_dicot_1<-df_dicot_1[,which(colMeans(!is.na(df_dicot_1)) > 0.2)]
 colMeans(is.na(df_dicot_1))
 #rimosse 530 colonne
@@ -203,10 +203,10 @@ for (i in 2:200002) {
   print(i)
 }
 
-#rimuovo la riga 159 e 260 (user 45 e 77) perchè codificate male (CT e TC sullo snp rs3094315 + altri problemi analoghi) 
+#rimuovo la riga 159 e 260 (user 45 e 77) perchÃ¨ codificate male (CT e TC sullo snp rs3094315 + altri problemi analoghi) 
 df_dicot_2<-df_dicot_2[-c(159,260),]
 
-#mantengo le colonne che hanno più del 20% di dati (rimuovo quelle con +80% di NA)
+#mantengo le colonne che hanno piÃ¹ del 20% di dati (rimuovo quelle con +80% di NA)
 df_dicot_2<-df_dicot_2[,which(colMeans(!is.na(df_dicot_2)) > 0.2)]
 #rimosse 1056 colonne
 
@@ -245,10 +245,10 @@ for (i in 2:300002) {
   print(i)
 }
 
-#rimuovo la riga 159 e 260 (user 45 e 77) perchè codificate male (CT e TC sullo snp rs3094315 + altri problemi analoghi) 
+#rimuovo la riga 159 e 260 (user 45 e 77) perchÃ¨ codificate male (CT e TC sullo snp rs3094315 + altri problemi analoghi) 
 df_dicot_3<-df_dicot_3[-c(159,260),]
 
-#mantengo le colonne che hanno più del 20% di dati (rimuovo quelle con +80% di NA)
+#mantengo le colonne che hanno piÃ¹ del 20% di dati (rimuovo quelle con +80% di NA)
 df_dicot_3<-df_dicot_3[,which(colMeans(!is.na(df_dicot_3)) > 0.2)]
 #rimosse 1441 colonne
 
@@ -285,10 +285,10 @@ for (i in 2:200002) {
   #print(i)
 }
 
-#rimuovo la riga 159 e 260 (user 45 e 77) perchè codificate male (CT e TC sullo snp rs3094315 + altri problemi analoghi) 
+#rimuovo la riga 159 e 260 (user 45 e 77) perchÃ¨ codificate male (CT e TC sullo snp rs3094315 + altri problemi analoghi) 
 df_dicot_4<-df_dicot_4[-c(159,260),]
 
-#mantengo le colonne che hanno più del 20% di dati (rimuovo quelle con +80% di NA)
+#mantengo le colonne che hanno piÃ¹ del 20% di dati (rimuovo quelle con +80% di NA)
 df_dicot_4<-df_dicot_4[,which(colMeans(!is.na(df_dicot_4)) > 0.2)]
 #rimosse 889 colonne
 
@@ -332,7 +332,7 @@ for (i in 4:200003) {
   print(i)
 }
 
-#mantengo le colonne che hanno più del 20% di dati (rimuovo quelle con +80% di NA)
+#mantengo le colonne che hanno piÃ¹ del 20% di dati (rimuovo quelle con +80% di NA)
 df_dicot_5<-df_dicot_5[,which(colMeans(!is.na(df_dicot_5)) > 0.2)]
 #rimosse 33120 colonne
 
@@ -376,7 +376,7 @@ for (i in 4:200003) {
   #print(i)
 }
 
-#mantengo le colonne che hanno più del 20% di dati (rimuovo quelle con +80% di NA)
+#mantengo le colonne che hanno piÃ¹ del 20% di dati (rimuovo quelle con +80% di NA)
 d1<-dim(df_dicot_6)[2]
 df_dicot_6<-df_dicot_6[,which(colMeans(!is.na(df_dicot_6)) > 0.2)]
 d2<-dim(df_dicot_6)[2]
@@ -422,7 +422,7 @@ df_dicot_7<-df_dicot_7[,which(colMeans(!is.na(df_dicot_7)) > 0.2)]
 
 levels(df_dicot_7[,4])[levels(df_dicot_7[,4])=="--"] <-NA
 df_dicot_7[,4]<-droplevels(df_dicot_7[,4])
-#mantengo le colonne che hanno più del 20% di dati (rimuovo quelle con +80% di NA)
+#mantengo le colonne che hanno piÃ¹ del 20% di dati (rimuovo quelle con +80% di NA)
 
 df_dicot_7<-df_dicot_7[,which(colMeans(!is.na(df_dicot_7)) > 0.2)]
 
@@ -458,7 +458,7 @@ for (i in 4:334) {
   print(i)
 }
 
-#mantengo le colonne che hanno più del 20% di dati (rimuovo quelle con +80% di NA)
+#mantengo le colonne che hanno piÃ¹ del 20% di dati (rimuovo quelle con +80% di NA)
 d1<-dim(df_dicot_9)[2]
 df_dicot_9<-df_dicot_9[,which(colMeans(!is.na(df_dicot_9)) > 0.2)]
 d2<-dim(df_dicot_9)[2]
@@ -614,7 +614,7 @@ dim(pulito) #309 861402
 pulito<-pulito[-239,] #questo soggetto ha solo una lettera su tutto il genoma
 dim(pulito) #308 861402
 
-#prendo gli snp nei cui livelli è presente 0
+#prendo gli snp nei cui livelli Ã¨ presente 0
 r4<-vector()
 for (i in 1:861615) {
   if ("0" %in% levels(as.factor(pulito[,i])))
@@ -623,7 +623,7 @@ for (i in 1:861615) {
   }
 }
 
-#elimino per questi snp i livelli non usati, così da vedere se effettivamente ci sono ancora 0 nel dataset
+#elimino per questi snp i livelli non usati, cosÃ¬ da vedere se effettivamente ci sono ancora 0 nel dataset
 
 for (i in c(r4)) {
   pulito[,i]<-droplevels(pulito[,i])
@@ -639,13 +639,13 @@ for (i in 1:861615) {
   }
 }
 
-#un genotipo è codificato male "CC ", lo ricodifico
+#un genotipo Ã¨ codificato male "CC ", lo ricodifico
 pulito[126,"rs17822931"]<-"CC"
 pulito[,"rs17822931"]<-droplevels(pulito[,"rs17822931"])
 pulito[126,"rs7903146"]<-"CT"
 pulito[,"rs7903146"]<-droplevels(pulito[,"rs7903146"])
 
-#rinomino le variabili il cui nome è estratto male "rs4873...2364"
+#rinomino le variabili il cui nome Ã¨ estratto male "rs4873...2364"
 for (i in 1:861402) {
   if (grepl("\\...",colnames(pulito)[i])==TRUE){
     colnames(pulito)[i]<-gsub("\\...*", "",colnames(pulito)[i])
@@ -677,7 +677,7 @@ if (!requireNamespace("BiocManager", quietly=TRUE))
 BiocManager::install("gdsfmt")
 BiocManager::install("SNPRelate")
 
-#rinomino gli SNP il cui nome è stato estratto male
+#rinomino gli SNP il cui nome Ã¨ stato estratto male
 grepl("\\...",colnames(coded)[245232])
 grepl("\\...",colnames(coded)[245233])
 
@@ -733,7 +733,7 @@ tab <- data.frame(sample.id = pca$sample.id,
                   stringsAsFactors = FALSE)
 head(tab)
 plot(tab$EV2, tab$EV1, xlab="Autovettore 2", ylab="Autovettore 1")
-#c'è un qualche pattern, proviamo a inserire il sesso
+#c'Ã¨ un qualche pattern, proviamo a inserire il sesso
 
 sample.id <- read.gdsn(index.gdsn(genofile, "sample.id"))
 pop.sex<-read.gdsn(index.gdsn(genofile, "sample.annot/sex"))
@@ -765,7 +765,7 @@ parcoord(pca$eigenvect[,1:16], col=datpop)
 
 
 #### MDS ####
-#For n study individuals, snpgdsIBS() can be used to create a n×n matrix of genome-wide average IBS(Identity By State) pairwise identities:
+#For n study individuals, snpgdsIBS() can be used to create a nÃ—n matrix of genome-wide average IBS(Identity By State) pairwise identities:
 ibs <- snpgdsIBS(genofile, num.thread=2)
 ibs$sample.id[257]
 ibs$ibs[1:2,1:2]
@@ -814,7 +814,7 @@ for (i in 4:857909) {
 }
 
 pval[1:4]
-#tolgo i primi tre elementi perchè vuoti
+#tolgo i primi tre elementi perchÃ¨ vuoti
 pval<-pval[-(1:3)] #length(pval)= 857906
 stat<-stat[-c(1:3)] #length(stat)= 857906
 coeff<-coeff[-c(1:3)] #length(coeff)= 857906
@@ -823,7 +823,7 @@ save(pval,file = "pval.RData")
 save(stat,file = "stat.RData")
 save(coeff,file = "coeff.RData")
 
-sorted<-sort(pval) #i più piccoli sono 10^-5
+sorted<-sort(pval) #i piÃ¹ piccoli sono 10^-5
 
 ################################################################################################################################
 ############################################# Creo matrice con posizione snp sul cromosoma #####################################
@@ -1052,7 +1052,7 @@ coef_lasso_50NA[order(coef_lasso_50NA[,1]),]
 #estraggo i nomi di questi snp
 #snp_diversidazero<-names(coef(lasso_50NA)[diversidazero,])[-1] #tolgo l'intercetta
 
-#faccio il manhattan plot per vedere qual è il cromosoma più interessato
+#faccio il manhattan plot per vedere qual Ã¨ il cromosoma piÃ¹ interessato
 #table(matrice_snp[matrice_snp$rsid%in%snp_diversidazero,]$chromosome)
 
 
@@ -1090,16 +1090,16 @@ save(nomi_elastic, file="nomi_elastic.RData")
 #################################################################################################################################
 ################################################# fused lasso with penalized #####################################################
 
-#vedo quale è il cromosoma con più snp tra i primi mille più significativi
+#vedo quale Ã¨ il cromosoma con piÃ¹ snp tra i primi mille piÃ¹ significativi
 sort(table(matrice_snp[matrice_snp$rsid%in%primi_mille_50NA$rsid,][,2]))
-#il 2 è quello più numeroso, ne ha 112
+#il 2 Ã¨ quello piÃ¹ numeroso, ne ha 112
 
 snp_cr2<-matrice_snp[which(matrice_snp$chromosome=="2") ,]
 snp_cr2<-snp_cr2$rsid
 
 #prendo da coded solo gli snp sul cromosoma 2
 coded_cr2<-coded[,snp_cr2]
-#rimuovo quelli con più di 50% di NA
+#rimuovo quelli con piÃ¹ di 50% di NA
 coded_cr2<-coded_cr2[,which(colMeans(!is.na(coded_cr2)) > 0.5)]
 
 library(impute)
@@ -1284,8 +1284,8 @@ plot(elastic_snp_cr2$position, elastic_snp_cr2$s0, type='h', las=2,
      xlab="Posizione sul cromosoma 2",ylab="Coefficiente elastic net", cex.axis=0.54)
 
 elastic_snp_cr2[order(elastic_snp_cr2$s0),]
-#più grande negativo: rs1548632 -0.152973
-#più grande positivo: rs7577996  0.334095
+#piÃ¹ grande negativo: rs1548632 -0.152973
+#piÃ¹ grande positivo: rs7577996  0.334095
                     # rs7557776  0.288590
 
 
